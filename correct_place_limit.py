@@ -10,7 +10,7 @@ def current_time():
     #print(s_current)
 my_tonce=current_time()
 def get_md5(ar1, ar2=current_time(), ar3='secret_key'):
-    st = ar1 + '&amount=13&market=CETBCH&price=0.00000069&tonce=' + ar2 + '&type=buy&secret_key=' + ar3
+    st = ar1 + '&amount=1&market=CETBCH&price=0.00000069&tonce=' + ar2 + '&type=buy&secret_key=' + ar3
     print('st:',st)
     import hashlib
     m = hashlib.md5()  # 创建md5对象
@@ -19,7 +19,7 @@ def get_md5(ar1, ar2=current_time(), ar3='secret_key'):
     # print('upper:',t.upper())  # 打印经过md5加密的字符串
     return (t.upper(),ar2)
 # call the funcion to get authorization & tonce
-(x, y) = get_md5('access_id=7A9D4B9D19604DD589771607EAD08A76')
+(x, y) = get_md5('access_id=7A9D4B9D19XXX')
 print(x, y)
 
 #place a limit order
@@ -31,7 +31,7 @@ def place_limit_order(x,y):
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
         'authorization': x}
     url = 'https://api.coinex.com/v1/order/limit'
-    s = json.dumps({'amount': '13', 'market': 'CETBCH','type':'buy','price':'0.00000069','access_id':'7A9D4B9D19604DD589771607EAD08A76','tonce':y})
+    s = json.dumps({'amount': '1', 'market': 'CETBCH','type':'buy','price':'0.00000069','access_id':'7A9D4B9D19XXX','tonce':y})
     r= requests.post(url,data=s,headers=headers)
     return r.text
 
