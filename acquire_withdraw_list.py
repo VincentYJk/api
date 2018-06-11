@@ -22,7 +22,7 @@ def get_md5(ar1,ar2=current_time(),ar3='secret_key'):
      #print('upper:',t.upper())  # 打印经过md5加密的字符串
      return (t.upper(),ar2)
 #call the funcion to get authorization & tonce
-(x,y)=get_md5('access_id=7A9D4B9D19604DD589771607EAD08A76')
+(x,y)=get_md5('access_id=7A9D4B9D19604DD5897716XXXX')
 #print(x,y)
 
 #get withdraw list
@@ -33,7 +33,7 @@ def get_withdraw_list(x,y):
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36',
         'authorization': x}
     #print('ar1:', x)
-    url = 'https://api.coinex.com/v1/balance/coin/withdraw?access_id=7A9D4B9D19604DD589771607EAD08A76&tonce=%s' % y
+    url = 'https://api.coinex.com/v1/balance/coin/withdraw?access_id=7A9D4B9D19604DD5897716XXXX&tonce=%s' % y
    # print(url)
     r1 = requests.get(url, headers=headers)
     # r1 = requests.get(url)
