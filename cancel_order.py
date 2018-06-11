@@ -11,7 +11,7 @@ def current_time():
 my_tonce=current_time()
 def get_md5(ar1, ar2=current_time(), ar3='secret_key'):
     st = ar1 + '&id=409129988&market=CETBCH&tonce=' + ar2 + '&secret_key=' + ar3
-    print('st:',st)
+    #print('st:',st)
     import hashlib
     m = hashlib.md5()  # 创建md5对象
     m.update(st.encode())  # 生成加密串，其中password是要加密的字符串
